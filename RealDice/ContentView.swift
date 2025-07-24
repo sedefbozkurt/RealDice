@@ -55,6 +55,12 @@ struct ContentView: View {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             diceNumber = Int.random(in: 1...6)
+    
+                // HAPTIC FEEDBACK
+                let impactMed = UIImpactFeedbackGenerator(style: .heavy)
+                impactMed.prepare()
+                impactMed.impactOccurred()
+            
             withAnimation {
                 scale = 1.0
             }
